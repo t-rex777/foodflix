@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Row from './components/Row';
+import { foodList } from './components/foodUrl/URL';
+import Banner from './components/Banner';
+import Nav from './components/Nav';
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+      <Banner/>
+      <Row title="FOODFLIX ORIGINALS" recipe={foodList.fastfoods}  />
+      <Row title="Trending Now" recipe={foodList.chicken}/>
+      <Row title="Top Rated" recipe={foodList.paneer}/>
+      <Row title="Desserts" recipe={foodList.dessert}/>
+      <Row title="Pizza" recipe={foodList.pizza}/>
+      <Row title="Noodles" recipe={foodList.noodles}/>
     </div>
   );
 }
